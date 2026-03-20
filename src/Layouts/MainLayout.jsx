@@ -19,7 +19,6 @@ export default function MainLayout() {
 
     return (
         <div className="flex h-screen bg-gray-100 overflow-hidden">
-            {/* Mobile sidebar toggle */}
             <button
                 className="md:hidden fixed top-4 left-4 z-50 p-2 bg-white rounded-lg shadow-md"
                 onClick={() => setSidebarOpen(!sidebarOpen)}
@@ -27,7 +26,6 @@ export default function MainLayout() {
                 {sidebarOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
 
-            {/* Sidebar */}
             <aside
                 className={`fixed inset-y-0 left-0 z-40 w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out md:relative md:translate-x-0 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'
                     }`}
@@ -49,7 +47,7 @@ export default function MainLayout() {
                                     ? 'bg-indigo-50 text-indigo-700'
                                     : 'text-gray-700 hover:bg-gray-100'
                                     }`}
-                                onClick={() => setSidebarOpen(false)} // close on mobile
+                                onClick={() => setSidebarOpen(false)}
                             >
                                 <Icon className="mr-3 h-5 w-5" />
                                 {item.label}
@@ -66,9 +64,7 @@ export default function MainLayout() {
                 </div>
             </aside>
 
-            {/* Main Content */}
             <div className="flex-1 flex flex-col overflow-hidden">
-                {/* Header */}
                 <header className="bg-white shadow-sm px-6 py-4 flex items-center justify-between">
                     <h2 className="ms-10 sm:ms-0 text-xl font-semibold text-gray-800">
                         {navItems.find(i => i.path === location.pathname)?.label || 'Dashboard'}
@@ -81,9 +77,8 @@ export default function MainLayout() {
                     </div>
                 </header>
 
-                {/* Page Content */}
                 <main className="flex-1 overflow-y-auto p-6">
-                    <Outlet />  {/* This renders the child routes like Dashboard */}
+                    <Outlet />
                 </main>
             </div>
         </div>

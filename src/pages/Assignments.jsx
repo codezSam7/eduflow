@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { PlusCircle, CheckCircle, XCircle, Edit, Search } from 'lucide-react';
 
 export default function Assignments() {
-    const [activeTab, setActiveTab] = useState('list'); // 'list' or 'view-submissions'
+    const [activeTab, setActiveTab] = useState('list');
     const [selectedAssignment, setSelectedAssignment] = useState(null);
     const [searchTerm, setSearchTerm] = useState('');
 
@@ -15,7 +15,7 @@ export default function Assignments() {
             dueDate: '2026-03-25',
             description: 'Solve questions 1-10 from the textbook. Show all workings.',
             status: 'active',
-            submissions: 28, // out of 35 students
+            submissions: 28,
             graded: 12,
         },
         {
@@ -40,13 +40,11 @@ export default function Assignments() {
         },
     ]);
 
-    // Mock students + submissions for the selected assignment
     const [submissions, setSubmissions] = useState([
         { studentId: 1, name: 'Aisha Mohammed', submitted: true, file: 'essay.pdf', grade: 18, maxGrade: 20, feedback: 'Good structure!' },
         { studentId: 2, name: 'Chukwu Emeka', submitted: true, file: 'quiz.docx', grade: 14, maxGrade: 20, feedback: '' },
         { studentId: 3, name: 'Fatima Bello', submitted: false, file: null, grade: null, maxGrade: 20, feedback: '' },
         { studentId: 4, name: 'Ibrahim Yusuf', submitted: true, file: 'worksheet.jpg', grade: null, maxGrade: 20, feedback: '' },
-        // ... more in real app
     ]);
 
     const filteredAssignments = assignments.filter(a =>
@@ -69,7 +67,6 @@ export default function Assignments() {
         };
         setAssignments([...assignments, newAssignment]);
         setActiveTab('list');
-        // Later: send to backend
     };
 
     const updateGrade = (studentId, grade) => {
@@ -80,7 +77,7 @@ export default function Assignments() {
 
     const saveAllGrades = () => {
         alert('Grades saved successfully! (Mock)');
-        // Later → API call
+
     };
 
     if (activeTab === 'create') {
@@ -248,7 +245,6 @@ export default function Assignments() {
                                                     type="text"
                                                     value={sub.feedback}
                                                     onChange={(e) => {
-                                                        // For MVP we skip live feedback update - can add later
                                                     }}
                                                     className="w-full px-3 py-1 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-indigo-500"
                                                     placeholder="Enter feedback..."
@@ -274,7 +270,6 @@ export default function Assignments() {
         );
     }
 
-    // Default: List view
     return (
         <div className="space-y-8">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">

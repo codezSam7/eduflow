@@ -6,7 +6,6 @@ export default function Attendance() {
     const [selectedDate, setSelectedDate] = useState(new Date().toISOString().split('T')[0]);
     const [searchTerm, setSearchTerm] = useState('');
 
-    // Mock student data (replace with real data later from API)
     const [students, setStudents] = useState([
         { id: 1, name: 'Aisha Mohammed', present: true },
         { id: 2, name: 'Chukwu Emeka', present: false },
@@ -15,22 +14,18 @@ export default function Attendance() {
         { id: 5, name: 'Ngozi Okonkwo', present: false },
         { id: 6, name: 'Tolu Adebayo', present: true },
         { id: 7, name: 'Zainab Abdullahi', present: true },
-        // Add more as needed (20–40 typical class size)
     ]);
 
-    // Filter students by search
     const filteredStudents = students.filter(student =>
         student.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
-    // Toggle individual student
     const togglePresent = (id) => {
         setStudents(students.map(s =>
             s.id === id ? { ...s, present: !s.present } : s
         ));
     };
 
-    // Bulk actions
     const markAllPresent = () => {
         setStudents(students.map(s => ({ ...s, present: true })));
     };
@@ -40,9 +35,7 @@ export default function Attendance() {
     };
 
     const handleSubmit = () => {
-        // Later: send to backend
         alert('Attendance submitted successfully! (Mock)');
-        // You can add toast notification library later (react-hot-toast)
     };
 
     const presentCount = students.filter(s => s.present).length;
@@ -50,7 +43,6 @@ export default function Attendance() {
 
     return (
         <div className="space-y-8">
-            {/* Header & Controls */}
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
                     <h1 className="text-2xl md:text-3xl font-bold text-gray-900">Mark Attendance</h1>
@@ -66,7 +58,6 @@ export default function Attendance() {
                         <option>JSS 3A - Mathematics</option>
                         <option>JSS 2B - English</option>
                         <option>SSS 1C - Physics</option>
-                        {/* Populate from real classes later */}
                     </select>
 
                     <input
@@ -78,7 +69,6 @@ export default function Attendance() {
                 </div>
             </div>
 
-            {/* Summary Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 <SummaryCard
                     icon={<Users className="h-6 w-6 text-indigo-600" />}
@@ -100,9 +90,7 @@ export default function Attendance() {
                 />
             </div>
 
-            {/* Student List */}
             <div className="bg-white rounded-xl shadow overflow-hidden">
-                {/* Search & Bulk */}
                 <div className="p-6 border-b border-gray-200 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                     <div className="relative w-full sm:w-64">
                         <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
@@ -131,7 +119,6 @@ export default function Attendance() {
                     </div>
                 </div>
 
-                {/* Table */}
                 <div className="overflow-x-auto">
                     <table className="min-w-full divide-y divide-gray-200">
                         <thead className="bg-gray-50">
@@ -182,7 +169,6 @@ export default function Attendance() {
                     </table>
                 </div>
 
-                {/* Footer / Submit */}
                 <div className="p-6 border-t border-gray-200 flex justify-between items-center">
                     <p className="text-sm text-gray-500">
                         {filteredStudents.length} student{filteredStudents.length !== 1 ? 's' : ''} shown

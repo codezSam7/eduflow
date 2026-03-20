@@ -12,7 +12,6 @@ export default function Login() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // Simple mock validation (replace with real auth later)
         if (!email || !password) {
             setError('Please fill in all fields');
             return;
@@ -65,7 +64,6 @@ export default function Login() {
                         )}
 
                         <form onSubmit={handleSubmit} className="space-y-6">
-                            {/* Email */}
                             <div className="relative">
                                 <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
                                     Email address
@@ -84,7 +82,6 @@ export default function Login() {
                                 </div>
                             </div>
 
-                            {/* Password */}
                             <div className="relative">
                                 <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
                                     Password

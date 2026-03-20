@@ -3,7 +3,6 @@ import { Users, BookOpen, Calendar, BarChart3, Clock } from 'lucide-react';
 export default function Dashboard() {
     return (
         <div className="space-y-8">
-            {/* Welcome + Quick Stats */}
             <div>
                 <h1 className="text-2xl md:text-3xl font-bold text-gray-900">Good morning, Samuel</h1>
                 <p className="text-gray-600 mt-1">Here's what's happening in your classes today</p>
@@ -37,7 +36,6 @@ export default function Dashboard() {
                 />
             </div>
 
-            {/* Quick Actions */}
             <div className="bg-white rounded-xl shadow p-6">
                 <h3 className="text-lg font-semibold mb-4">Quick Actions</h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -64,7 +62,6 @@ export default function Dashboard() {
                 </div>
             </div>
 
-            {/* Recent Activity or Upcoming */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div className="bg-white rounded-xl shadow p-6">
                     <h3 className="text-lg font-semibold mb-4">Upcoming Deadlines</h3>
@@ -73,7 +70,6 @@ export default function Dashboard() {
                             <span>English Essay Submission</span>
                             <span className="text-red-600">Tomorrow</span>
                         </li>
-                        {/* Add more items here later */}
                     </ul>
                 </div>
 
@@ -84,7 +80,6 @@ export default function Dashboard() {
                             <span>JSS 3 Math Quiz</span>
                             <span className="text-green-600">Avg: 82%</span>
                         </li>
-                        {/* Add more items here later */}
                     </ul>
                 </div>
             </div>
