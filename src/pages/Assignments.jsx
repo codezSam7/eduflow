@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { PlusCircle, FileText, Calendar, CheckCircle, XCircle, Edit, Search } from 'lucide-react';
+import { PlusCircle, CheckCircle, XCircle, Edit, Search } from 'lucide-react';
 
 export default function Assignments() {
     const [activeTab, setActiveTab] = useState('list'); // 'list' or 'view-submissions'
