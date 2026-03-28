@@ -1,4 +1,5 @@
 EduFlow
+
 A modern teacher dashboard for school management (MVP) built with React + Tailwind CSS.  
 Started as a school project to solve real problems in Nigerian schools: heavy paperwork, manual attendance, assignment tracking.
 
@@ -27,6 +28,7 @@ Here's what teachers can do right now:
 - None yet — planning to add Ctrl+Z undo, etc. later
 
 👩🏽‍💻 The Process
+
 I started with login + branding screen, then built the main layout (sidebar + header).  
 Next came the dashboard with fake stats and quick buttons.  
 Then attendance (toggles, search, bulk mark) — this felt like the biggest win because teachers hate manual registers.  
