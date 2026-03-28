@@ -118,6 +118,7 @@ export default function Login() {
                             </div>
 
                             <button
+                                onClick={handleSubmit}
                                 type="submit"
                                 className="w-full py-3 px-4 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-200 transform hover:scale-[1.02]"
                             >
