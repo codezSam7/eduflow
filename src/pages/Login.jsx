@@ -17,10 +17,10 @@ export default function Login() {
             return;
         }
 
-        if (email === 'teacher@eduflow.com' && password === 'password123') {  // demo credentials
+        if (email === 'teacher@eduflow.com' && password === 'edusflow242') {  // demo credentials
             localStorage.setItem('isLoggedIn', 'true');
             localStorage.setItem('userName', 'Samuel');
-            navigate('/dashboard');
+            navigate('/dashboard', { replace: true });
         } else {
             setError('Invalid email or password');
         }
