@@ -20,15 +20,20 @@ export default function Settings() {
     };
 
     return (
-        <div className="space-y-8">
-            <h1 className="text-2xl font-bold text-gray-900">Settings</h1>
+        <div className="space-y-8 p-4 sm:p-6 md:p-8 max-w-5xl mx-auto">
+            <h1 className="text-xl sm:text-2xl font-bold text-gray-900">
+                Settings
+            </h1>
 
             {/* School Settings */}
-            <div className="bg-white rounded-xl shadow p-6 max-w-xl">
+            <div className="bg-white rounded-xl shadow p-4 sm:p-6 w-full max-w-2xl mx-auto">
                 <h2 className="text-lg font-semibold mb-6">School Settings</h2>
 
+                {/* School Name */}
                 <div className="mb-6">
-                    <label className="block text-sm font-medium text-gray-700 mb-2">School Name</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                        School Name
+                    </label>
                     <input
                         type="text"
                         value={schoolName}
@@ -37,11 +42,18 @@ export default function Settings() {
                     />
                 </div>
 
+                {/* Classes */}
                 <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Classes</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Classes
+                    </label>
+
                     <div className="space-y-2 mb-4">
                         {classes.map((cls, index) => (
-                            <div key={index} className="flex justify-between items-center bg-gray-50 px-4 py-3 rounded-lg">
+                            <div
+                                key={index}
+                                className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 bg-gray-50 px-4 py-3 rounded-lg"
+                            >
                                 <span className="font-medium">{cls}</span>
                                 <button
                                     onClick={() => handleDeleteClass(index)}
@@ -53,7 +65,8 @@ export default function Settings() {
                         ))}
                     </div>
 
-                    <div className="flex gap-2">
+                    {/* Add Class */}
+                    <div className="flex flex-col sm:flex-row gap-2">
                         <input
                             type="text"
                             placeholder="Add new class (e.g. JSS3)"
@@ -63,7 +76,7 @@ export default function Settings() {
                         />
                         <button
                             onClick={handleAddClass}
-                            className="px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700"
+                            className="w-full sm:w-auto px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700"
                         >
                             Add
                         </button>
@@ -72,30 +85,40 @@ export default function Settings() {
             </div>
 
             {/* Teacher Profile */}
-            <div className="bg-white rounded-xl shadow p-6 max-w-xl">
+            <div className="bg-white rounded-xl shadow p-4 sm:p-6 w-full max-w-2xl mx-auto">
                 <h2 className="text-lg font-semibold mb-6">Teacher Profile</h2>
 
+                {/* Name */}
                 <div className="mb-6">
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Full Name
+                    </label>
                     <input
                         type="text"
                         value={teacher.name}
-                        onChange={(e) => setTeacher({ ...teacher, name: e.target.value })}
+                        onChange={(e) =>
+                            setTeacher({ ...teacher, name: e.target.value })
+                        }
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                     />
                 </div>
 
+                {/* Email */}
                 <div className="mb-6">
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Email Address
+                    </label>
                     <input
                         type="email"
                         value={teacher.email}
-                        onChange={(e) => setTeacher({ ...teacher, email: e.target.value })}
+                        onChange={(e) =>
+                            setTeacher({ ...teacher, email: e.target.value })
+                        }
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                     />
                 </div>
 
-                <button className="px-8 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700">
+                <button className="w-full sm:w-auto px-8 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700">
                     Save Changes
                 </button>
             </div>
