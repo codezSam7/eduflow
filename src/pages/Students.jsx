@@ -38,7 +38,7 @@ export default function Students() {
             {/* Table Card */}
             <div className="bg-white rounded-xl shadow overflow-hidden">
                 <div className="overflow-x-auto">
-                    <table className="w-full min-w-[600px]">
+                    <table className="w-full min-w-150">
                         <thead>
                             <tr className="border-b bg-gray-50">
                                 <th className="py-4 px-6 text-left text-xs font-medium text-gray-500 uppercase">Student ID</th>
